@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Илья Минин — Backend Developer (Python / FastAPI)</title>
+    <meta
+      name="description"
+      content="Backend разработчик на Python и FastAPI. Опыт коммерческой разработки более года. Спроектировал и задеплоил Kantano. Открыт к удаленке, гибриду и релокации."
+    />
+    <meta
+      name="keywords"
+      content="Backend Developer, Python, FastAPI, PostgreSQL, Redis, Docker, Илья Минин, Ilya Minin"
+    />
+    <meta name="author" content="Ilya Minin" />
+
+    <link rel="alternate" hreflang="ru" href="https://cv.kantano.ru/" />
+    <link rel="alternate" hreflang="en" href="https://cv.kantano.ru/en.html" />
+    <link rel="alternate" hreflang="x-default" href="https://cv.kantano.ru/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Илья Минин — Backend Developer" />
+    <meta
+      property="og:description"
+      content="Создаю надежные бэкенд-сервисы на Python и FastAPI. WebSocket, Redis, CI/CD."
+    />
+    <meta property="og:image" content="https://cv.kantano.ru/preview.jpg" />
+    <meta property="og:url" content="https://cv.kantano.ru/" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ilya Minin",
+        "jobTitle": "Backend Developer",
+        "telephone": "+7 921 982-62-83",
+        "email": "mininiv2005@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "St. Petersburg & Moscow, Russia"
+        },
+        "knowsAbout": [
+          "Python",
+          "FastAPI",
+          "PostgreSQL",
+          "Redis",
+          "Docker",
+          "SQLAlchemy",
+          "WebSocket"
+        ],
+        "url": "https://cv.kantano.ru",
+        "sameAs": [
+          "https://github.com/Ilm1n",
+          "https://linkedin.com/in/ilya-minin-400000348",
+          "https://t.me/Ilm1n"
+        ]
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Spline+Sans+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg-color: #f7f4ed;
+        --fg-color: #1a1a1a;
+        --accent-color: #ff4d00;
+        --muted-color: #6b6963;
+        --card-bg: #fffcf5;
+        --border-color: rgba(26, 26, 26, 0.1);
+        --grid-color: rgba(26, 26, 26, 0.04);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--fg-color);
+        font-family: "Spline Sans Mono", monospace;
+        font-size: 16px;
+        line-height: 1.7;
+        overflow-x: hidden;
+        background-image:
+          radial-gradient(
+            circle at 50% 0%,
+            rgba(255, 77, 0, 0.06) 0%,
+            transparent 50%
+          ),
+          linear-gradient(var(--grid-color) 1px, transparent 1px),
+          linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+        background-size:
+          100% 100%,
+          40px 40px,
+          40px 40px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+      }
+      h1 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: 900;
+      }
+      h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        display: inline-block;
+        position: relative;
+      }
+      h2::after {
+        content: "_";
+        color: var(--accent-color);
+        animation: blink 1s step-end infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        padding: 1rem 0;
+        background: rgba(247, 244, 237, 0.85);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border-color);
+        z-index: 1000;
+      }
+      .header-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.85rem;
+        color: var(--muted-color);
+        gap: 1rem;
+      }
+      .status-online {
+        color: var(--accent-color);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        white-space: nowrap;
+      }
+      .status-online::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background: var(--accent-color);
+        border-radius: 50%;
+        box-shadow: 0 0 10px var(--accent-color);
+      }
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+      }
+      .nav-links a {
+        color: var(--muted-color);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--fg-color);
+      }
+
+      .lang-switch a {
+        font-weight: 700;
+        color: var(--muted-color);
+      }
+      .lang-switch a.active {
+        color: var(--accent-color);
+        border-bottom: 1px solid var(--accent-color);
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+      }
+
+      section {
+        margin-bottom: 5rem;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s forwards;
+      }
+      section:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      section:nth-child(2) {
+        animation-delay: 0.3s;
+      }
+      section:nth-child(3) {
+        animation-delay: 0.5s;
+      }
+      section:nth-child(4) {
+        animation-delay: 0.7s;
+      }
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-tag {
+        display: inline-block;
+        padding: 0.2rem 0.6rem;
+        border: 1px solid var(--accent-color);
+        color: var(--accent-color);
+        font-size: 0.75rem;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .hero p {
+        color: var(--muted-color);
+        margin-top: 1.5rem;
+        font-size: 1.1rem;
+        max-width: 600px;
+      }
+
+      .hero-btns {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1.5rem;
+        background: var(--fg-color);
+        color: var(--bg-color);
+        text-decoration: none;
+        font-family: "Spline Sans Mono", monospace;
+        font-size: 0.9rem;
+        transition:
+          transform 0.2s,
+          background 0.2s;
+        border: 1px solid var(--fg-color);
+        width: fit-content;
+        margin-top: 2rem;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        background: var(--accent-color);
+        border-color: var(--accent-color);
+      }
+      .btn::before {
+        content: ">";
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--fg-color);
+      }
+      .btn-outline:hover {
+        background: var(--fg-color);
+        color: var(--bg-color);
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+      }
+      .skill-category {
+        background: var(--card-bg);
+        padding: 1.5rem;
+        border: 1px solid var(--border-color);
+        transition:
+          border-color 0.3s,
+          transform 0.3s;
+      }
+      .skill-category:hover {
+        border-color: var(--accent-color);
+        transform: translateY(-3px);
+      }
+      .skill-category h3 {
+        font-family: "Spline Sans Mono", monospace;
+        font-size: 0.85rem;
+        color: var(--muted-color);
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+      }
+      .skill-list {
+        list-style: none;
+        font-size: 0.95rem;
+      }
+      .skill-list li::before {
+        content: "├── ";
+        color: var(--accent-color);
+      }
+      .skill-list li:last-child::before {
+        content: "└── ";
+        color: var(--accent-color);
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-left: 2rem;
+        margin-bottom: 3rem;
+        border-left: 2px solid var(--border-color);
+      }
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -7px;
+        top: 5px;
+        width: 12px;
+        height: 12px;
+        background: var(--bg-color);
+        border: 2px solid var(--accent-color);
+        border-radius: 50%;
+      }
+      .timeline-date {
+        font-size: 0.85rem;
+        color: var(--accent-color);
+        margin-bottom: 0.5rem;
+        display: block;
+        font-weight: 500;
+      }
+      .timeline-title {
+        font-family: "Fraunces", serif;
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+      }
+      .timeline-company {
+        font-size: 1rem;
+        color: var(--muted-color);
+        margin-bottom: 1rem;
+        display: block;
+      }
+      .timeline-item ul {
+        margin-top: 1rem;
+        padding-left: 1.2rem;
+        color: var(--muted-color);
+      }
+      .timeline-item li {
+        margin-bottom: 0.5rem;
+      }
+
+      .tech-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+      }
+      .tech-badge {
+        font-size: 0.75rem;
+        background: var(--bg-color);
+        border: 1px solid var(--border-color);
+        padding: 0.3rem 0.6rem;
+        color: var(--muted-color);
+      }
+
+      .footer {
+        margin-top: 6rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border-color);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        color: var(--muted-color);
+        font-size: 0.9rem;
+      }
+      .footer-block {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .footer-right {
+        flex-direction: row;
+        gap: 1.5rem;
+        align-items: center;
+      }
+      .footer-block a {
+        color: var(--muted-color);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        width: fit-content;
+      }
+      .footer-block a:hover {
+        color: var(--accent-color);
+        border-bottom: 1px solid var(--accent-color);
+      }
+
+      @media (max-width: 600px) {
+        .nav-links .nav-hide {
+          display: none;
+        }
+        .header-content {
+          justify-content: center;
+        }
+        .footer {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .footer-right {
+          gap: 1rem;
+        }
+      }
+
+      @media print {
+        body {
+          background: white;
+        }
+        .header,
+        .hero-btns,
+        .skill-list li::before {
+          display: none;
+        }
+        section {
+          opacity: 1 !important;
+          transform: none !important;
+          margin-bottom: 2rem;
+        }
+        .container {
+          max-width: 100%;
+          padding: 0;
+        }
+        .skill-category,
+        .timeline-item {
+          border-color: black;
+        }
+        h2::after {
+          display: none;
+        }
+        a {
+          text-decoration: none;
+          color: black;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-content">
+        <span class="status-online">ОТКРЫТ ДЛЯ РАБОТЫ</span>
+        <nav class="nav-links">
+          <a href="#stack" class="nav-hide">Стек</a>
+          <a href="#experience" class="nav-hide">Опыт</a>
+          <a href="#projects" class="nav-hide">Проекты</a>
+          <span class="lang-switch">
+            <a href="index.html" class="active">RU</a> /
+            <a href="en.html">EN</a>
+          </span>
+        </nav>
+        <span>СПБ · МСК</span>
+      </div>
+    </header>
+
+    <div class="container">
+      <section class="hero" id="about">
+        <span class="hero-tag">Backend Developer</span>
+        <h1>Илья Минин</h1>
+        <p>
+          Пишу backend на Python и FastAPI. Есть более года коммерческого опыта
+          и собственный проект Kantano — сделал с нуля и задеплоил на прод:
+          реалтайм через WebSocket, ролевая модель, CI/CD на GitHub Actions, всё
+          работает.
+          <br /><br />
+          AI-инструменты (Codex) использую осознанно — ревью, тесты, типовые
+          задачи — только там где сам уже разобрался. Открыт к удалёнке, гибриду
+          и релокации.
+        </p>
+        <div class="hero-btns">
+          <a href="Ilya_Minin_Backend_Developer_RU.pdf" download class="btn"
+            >Скачать резюме</a
+          >
+          <a href="https://t.me/Ilm1n" target="_blank" class="btn btn-outline"
+            >Написать в Telegram</a
+          >
+        </div>
+      </section>
+
+      <section id="stack">
+        <h2>Технологии</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>// Языки</h3>
+            <ul class="skill-list">
+              <li>Python</li>
+              <li>TypeScript</li>
+              <li>SQL</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>// Backend</h3>
+            <ul class="skill-list">
+              <li>FastAPI</li>
+              <li>Django (базово)</li>
+              <li>SQLAlchemy (async)</li>
+              <li>REST / OpenAPI</li>
+              <li>WebSocket</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>// Data & Cache</h3>
+            <ul class="skill-list">
+              <li>PostgreSQL</li>
+              <li>Redis</li>
+              <li>Alembic</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>// DevOps & Tools</h3>
+            <ul class="skill-list">
+              <li>Docker / Compose</li>
+              <li>GitHub Actions</li>
+              <li>Linux</li>
+              <li>pytest / Ruff</li>
+              <li>Git</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <h2>Опыт работы</h2>
+        <div class="timeline-item">
+          <span class="timeline-date">май 2025 — июнь 2026 · 13 месяцев</span>
+          <h3 class="timeline-title">Backend Developer</h3>
+          <span class="timeline-company">ООО «Оверленг-Ит»</span>
+          <p>
+            Писал REST API эндпоинты и бизнес-логику для сервиса проверки
+            дипломных и курсовых работ на соответствие ГОСТам.
+          </p>
+          <ul>
+            <li>
+              Проектировал модели данных в PostgreSQL и писал запросы через
+              SQLAlchemy.
+            </li>
+            <li>
+              Покрывал функционал тестами на pytest с отдельной тестовой БД,
+              чтобы изменения не ломали рабочие сценарии.
+            </li>
+            <li>
+              Настроил автогенерацию TypeScript-клиента из OpenAPI-схемы —
+              фронтенд забирал готовые типы вместо ручной синхронизации.
+            </li>
+            <li>
+              Фиксил баги, рефакторил код под читаемость и поддерживаемость.
+            </li>
+          </ul>
+          <div class="tech-badges">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">FastAPI</span>
+            <span class="tech-badge">PostgreSQL</span>
+            <span class="tech-badge">SQLAlchemy</span>
+            <span class="tech-badge">pytest</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Проекты</h2>
+        <div class="timeline-item">
+          <span class="timeline-date"
+            >kantano.ru · github.com/Ilm1n/Kantano</span
+          >
+          <h3 class="timeline-title">Kantano — Kanban Task Manager</h3>
+          <span class="timeline-company">Full-stack проект с нуля</span>
+          <p>
+            Спроектировал архитектуру с нуля: 38 эндпоинтов на FastAPI, async
+            SQLAlchemy, миграции Alembic. 144 теста (unit и интеграционные),
+            покрыта вся ключевая бизнес-логика.
+          </p>
+          <ul>
+            <li>
+              Сделал аутентификацию через JWT (access/refresh в cookie) и
+              OAuth-вход через Yandex ID.
+            </li>
+            <li>
+              Реализовал ролевую модель (OWNER/MANAGER/MEMBER) и приглашения
+              участников по QR-коду.
+            </li>
+            <li>
+              Подключил реалтайм через WebSocket + Redis Pub/Sub — Redis как
+              шина между инстансами.
+            </li>
+            <li>
+              Настроил Ruff + basedpyright + pre-commit, чтобы ошибки типизации
+              не доходили до репозитория.
+            </li>
+            <li>
+              CI/CD на GitHub Actions, деплой через Docker Compose, Caddy как
+              reverse proxy с автоматическим HTTPS.
+            </li>
+            <li>
+              Фронт на Vue 3 / Pinia / Vite, TypeScript-клиент генерируется из
+              OpenAPI автоматически.
+            </li>
+          </ul>
+          <div class="tech-badges">
+            <span class="tech-badge">FastAPI</span>
+            <span class="tech-badge">PostgreSQL</span>
+            <span class="tech-badge">Redis</span>
+            <span class="tech-badge">WebSocket</span>
+            <span class="tech-badge">Docker</span>
+            <span class="tech-badge">Vue 3</span>
+            <span class="tech-badge">GitHub Actions</span>
+          </div>
+          <a href="https://kantano.ru" target="_blank" class="btn"
+            >Открыть проект</a
+          >
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-block">
+          <a href="mailto:mininiv2005@gmail.com">mininiv2005@gmail.com</a>
+          <a href="tel:+79219826283">+7 921 982-62-83</a>
+        </div>
+        <div class="footer-block footer-right">
+          <a href="https://t.me/Ilm1n" target="_blank">Telegram ↗</a>
+          <a href="https://github.com/Ilm1n" target="_blank">GitHub ↗</a>
+          <a href="https://linkedin.com/in/ilya-minin-400000348" target="_blank"
+            >LinkedIn ↗</a
+          >
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
