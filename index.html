@@ -7,7 +7,7 @@
     <title>Илья Минин - Backend Developer (Python / FastAPI)</title>
     <meta
       name="description"
-      content="Backend разработчик на Python и FastAPI. Опыт коммерческой разработки более года. Спроектировал и задеплоил Kantano. Открыт к удаленке, гибриду и релокации."
+      content="Backend-разработчик на Python и FastAPI с более чем годом опыта разработки backend-сервисов. Самостоятельно разработал и поддерживаю production-проект Kantano. Открыт к удалённой работе, гибриду и релокации."
     />
     <meta
       name="keywords"
@@ -60,7 +60,6 @@
         "url": "https://cv.kantano.ru",
         "sameAs": [
           "https://github.com/Ilm1n",
-          "https://linkedin.com/in/ilya-minin-400000348",
           "https://t.me/Ilm1n"
         ]
       }
@@ -488,13 +487,12 @@
         <span class="hero-tag">Backend Developer</span>
         <h1>Илья Минин</h1>
         <p>
-          Пишу backend на Python и FastAPI. Есть более года коммерческого опыта
-          и собственный проект Kantano - сделал с нуля и задеплоил на прод:
-          реалтайм через WebSocket, ролевая модель, CI/CD на GitHub Actions.
-          <br /><br />
-          AI-инструменты (Codex) использую осознанно - ревью, тесты, типовые
-          задачи - только там где сам уже разобрался. Открыт к удалёнке, гибриду
-          и релокации.
+          Backend-разработчик на Python / FastAPI с более чем годом опыта
+          разработки backend-сервисов. Разрабатывал REST API, бизнес-логику и
+          структуру данных в PostgreSQL, писал автотесты на pytest.
+          Самостоятельно разработал и поддерживаю production-проект Kantano с
+          JWT-аутентификацией, ролевой моделью, WebSocket, Redis Pub/Sub, CI/CD
+          и Docker-деплоем. Открыт к удалённой работе, гибриду и релокации.
         </p>
         <div class="hero-btns">
           <a href="Ilya_Minin_Backend_Developer_RU.pdf" download class="btn"
@@ -521,6 +519,8 @@
             <h3>// Backend</h3>
             <ul class="skill-list">
               <li>FastAPI</li>
+              <li>Pydantic</li>
+              <li>asyncio</li>
               <li>Django (базово)</li>
               <li>SQLAlchemy (async)</li>
               <li>REST / OpenAPI</li>
@@ -539,6 +539,7 @@
             <h3>// DevOps & Tools</h3>
             <ul class="skill-list">
               <li>Docker / Compose</li>
+              <li>Nginx</li>
               <li>GitHub Actions</li>
               <li>Linux</li>
               <li>pytest / Ruff</li>
@@ -551,7 +552,7 @@
       <section id="experience">
         <h2>Опыт работы</h2>
         <div class="timeline-item">
-          <span class="timeline-date">май 2025 - июнь 2026 · 13 месяцев</span>
+          <span class="timeline-date">май 2025 - июнь 2026</span>
           <h3 class="timeline-title">Backend Developer</h3>
           <span class="timeline-company">ООО «Оверленг-Ит»</span>
           <p>
@@ -564,15 +565,17 @@
               SQLAlchemy.
             </li>
             <li>
-              Покрывал функционал тестами на pytest с отдельной тестовой БД,
-              чтобы изменения не ломали рабочие сценарии.
+              Покрывал функционал тестами на pytest с отдельной тестовой БД.
             </li>
             <li>
-              Настроил автогенерацию TypeScript-клиента из OpenAPI-схемы -
-              фронтенд забирал готовые типы вместо ручной синхронизации.
+              Настроил автогенерацию TypeScript-клиента из OpenAPI-схемы.
             </li>
             <li>
-              Фиксил баги, рефакторил код под читаемость и поддерживаемость.
+              Участвовал в настройке CI/CD-пайплайна и Docker-окружения проекта.
+            </li>
+            <li>
+              Исправлял ошибки и рефакторил код для повышения читаемости и
+              поддерживаемости.
             </li>
           </ul>
           <div class="tech-badges">
@@ -581,6 +584,8 @@
             <span class="tech-badge">PostgreSQL</span>
             <span class="tech-badge">SQLAlchemy</span>
             <span class="tech-badge">pytest</span>
+            <span class="tech-badge">Docker</span>
+            <span class="tech-badge">CI/CD</span>
           </div>
         </div>
       </section>
@@ -600,7 +605,7 @@
           </p>
           <ul>
             <li>
-              Сделал аутентификацию через JWT (access/refresh в cookie) и
+              Реализовал JWT-аутентификацию (access- и refresh-токены в cookie) и
               OAuth-вход через Yandex ID.
             </li>
             <li>
@@ -608,20 +613,20 @@
               участников по QR-коду.
             </li>
             <li>
-              Подключил реалтайм через WebSocket + Redis Pub/Sub - Redis как
-              шина между инстансами.
+              Реализовал real-time взаимодействие через WebSocket и Redis
+              Pub/Sub как шину сообщений.
             </li>
             <li>
-              Настроил Ruff + basedpyright + pre-commit, чтобы ошибки типизации
-              не доходили до репозитория.
+              Настроил Ruff, basedpyright и pre-commit для проверки качества
+              кода.
             </li>
             <li>
               CI/CD на GitHub Actions, деплой через Docker Compose, Caddy как
               reverse proxy с автоматическим HTTPS.
             </li>
             <li>
-              Фронт на Vue 3 / Pinia / Vite, TypeScript-клиент генерируется из
-              OpenAPI автоматически.
+              Разработал фронтенд на Vue 3 / Pinia / Vite; TypeScript-клиент
+              генерируется из OpenAPI.
             </li>
           </ul>
           <div class="tech-badges">
@@ -647,9 +652,6 @@
         <div class="footer-block footer-right">
           <a href="https://t.me/Ilm1n" target="_blank">Telegram ↗</a>
           <a href="https://github.com/Ilm1n" target="_blank">GitHub ↗</a>
-          <a href="https://linkedin.com/in/ilya-minin-400000348" target="_blank"
-            >LinkedIn ↗</a
-          >
         </div>
       </footer>
     </div>
