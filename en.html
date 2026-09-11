@@ -7,11 +7,11 @@
     <title>Ilya Minin - Backend Developer (Python / FastAPI)</title>
     <meta
       name="description"
-      content="Backend Developer specializing in Python and FastAPI with commercial experience. I design scalable architectures, write clean tested code, and build reliable APIs. Creator of the Kantano production project."
+      content="Backend Developer with over a year of experience in Python and FastAPI. Experienced with PostgreSQL, Redis, task queues, testing, and production operations. Creator and maintainer of Kantano."
     />
     <meta
       name="keywords"
-      content="Backend Developer, Python, FastAPI, PostgreSQL, Redis, Docker, Ilya Minin"
+      content="Backend Developer, Python, FastAPI, PostgreSQL, Redis, RabbitMQ, Celery, Docker, OpenTelemetry, Sentry, Ilya Minin"
     />
     <meta name="author" content="Ilya Minin" />
 
@@ -31,7 +31,7 @@
     <meta property="og:title" content="Ilya Minin - Backend Developer" />
     <meta
       property="og:description"
-      content="Building reliable backend services with Python and FastAPI. PostgreSQL, WebSocket, Redis, Docker, CI/CD."
+      content="Backend Developer working with Python, FastAPI, PostgreSQL, Redis, RabbitMQ, Celery, Docker, CI/CD, and Grafana Stack."
     />
     <meta property="og:image" content="https://cv.kantano.ru/preview.jpg" />
     <meta property="og:url" content="https://cv.kantano.ru/en.html" />
@@ -46,16 +46,20 @@
         "email": "mininiv2005@gmail.com",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "St. Petersburg & Moscow, Russia"
+          "addressLocality": "Saint Petersburg, Russia"
         },
         "knowsAbout": [
           "Python",
           "FastAPI",
           "PostgreSQL",
           "Redis",
+          "RabbitMQ",
+          "Celery",
           "Docker",
           "SQLAlchemy",
-          "WebSocket"
+          "WebSocket",
+          "OpenTelemetry",
+          "Sentry"
         ],
         "url": "https://cv.kantano.ru",
         "sameAs": [
@@ -478,7 +482,7 @@
             <a href="en.html" class="active">EN</a>
           </span>
         </nav>
-        <span>SPB · MSK</span>
+        <span>SPB</span>
       </div>
     </header>
 
@@ -487,10 +491,16 @@
         <span class="hero-tag">Backend Developer</span>
         <h1>Ilya Minin</h1>
         <p>
-          I am a <strong>Python / FastAPI Backend Developer</strong> with over a year of commercial experience. 
-          I focus on designing clean architecture, working with <strong>PostgreSQL</strong>, and writing maintainable, tested code. I understand deployment workflows (<strong>Docker, CI/CD</strong>) and frontend integration challenges - striving to build developer-friendly APIs.
+          I am a <strong>Backend Developer with over a year of experience</strong>
+          building REST APIs and business logic with Python and FastAPI. I work
+          with <strong>PostgreSQL</strong>, Redis, task queues, and unit and
+          integration testing.
           <br><br>
-          In addition to commercial experience, I built and maintain <strong>Kantano</strong>, a full-stack production project. Open to remote, hybrid, and relocation opportunities.
+          I have hands-on experience deploying and supporting production
+          services with Docker, CI/CD, metrics, logs, and distributed tracing. I
+          independently built and maintain <strong>Kantano</strong>, a production
+          task management service for teams. Open to remote, hybrid, and
+          relocation opportunities.
         </p>
         <div class="hero-btns">
           <a href="Ilya_Minin_Backend_Developer_EN.pdf" download class="btn"
@@ -506,42 +516,58 @@
         <h2>Tech Stack</h2>
         <div class="skills-grid">
           <div class="skill-category">
-            <h3>// Languages</h3>
-            <ul class="skill-list">
-              <li>Python</li>
-              <li>TypeScript</li>
-              <li>SQL</li>
-            </ul>
-          </div>
-          <div class="skill-category">
             <h3>// Backend</h3>
             <ul class="skill-list">
+              <li>Python</li>
               <li>FastAPI</li>
-              <li>Pydantic</li>
               <li>asyncio</li>
-              <li>Django (basic)</li>
-              <li>SQLAlchemy (async)</li>
-              <li>REST / OpenAPI</li>
+              <li>SQLAlchemy</li>
+              <li>Pydantic</li>
+              <li>REST APIs</li>
               <li>WebSocket</li>
+              <li>pytest</li>
+              <li>Ruff</li>
             </ul>
           </div>
           <div class="skill-category">
-            <h3>// Data & Cache</h3>
+            <h3>// Data & Messaging</h3>
             <ul class="skill-list">
               <li>PostgreSQL</li>
               <li>Redis</li>
+              <li>RabbitMQ</li>
+              <li>Celery</li>
               <li>Alembic</li>
             </ul>
           </div>
           <div class="skill-category">
-            <h3>// DevOps & Tools</h3>
+            <h3>// Infrastructure</h3>
             <ul class="skill-list">
-              <li>Docker / Compose</li>
-              <li>Nginx</li>
+              <li>Docker</li>
+              <li>Docker Compose</li>
               <li>GitHub Actions</li>
+              <li>Caddy</li>
+              <li>Nginx</li>
               <li>Linux</li>
-              <li>pytest / Ruff</li>
               <li>Git</li>
+              <li>S3</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>// Observability</h3>
+            <ul class="skill-list">
+              <li>Grafana Stack</li>
+              <li>OpenTelemetry</li>
+              <li>Sentry</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>// Additional</h3>
+            <ul class="skill-list">
+              <li>Vue 3</li>
+              <li>TypeScript</li>
+              <li>Django (basic)</li>
+              <li>OpenAI Codex</li>
+              <li>Claude Code</li>
             </ul>
           </div>
         </div>
@@ -550,37 +576,48 @@
       <section id="experience">
         <h2>Experience</h2>
         <div class="timeline-item">
-          <span class="timeline-date">May 2025 - Jun 2026</span>
+          <span class="timeline-date">May 2025 - June 2026</span>
           <h3 class="timeline-title">Backend Developer</h3>
-          <span class="timeline-company">Overlang-IT</span>
+          <span class="timeline-company">Overleng-IT LLC</span>
           <p>
-            Developed REST APIs and core business logic for an automated document verification service operating according to GOST standards.
+            Automated academic paper compliance service operating according to
+            GOST requirements.
           </p>
           <ul>
             <li>
-              Designed PostgreSQL data models and implemented optimized queries using SQLAlchemy.
+              Developed REST APIs and business logic for an automated service
+              that checked theses and term papers against GOST requirements.
             </li>
             <li>
-              Automated TypeScript client generation from the OpenAPI schema for seamless frontend-backend integration.
+              Designed PostgreSQL data models and implemented queries with
+              SQLAlchemy.
             </li>
             <li>
-              Covered core functionality with unit and integration tests (pytest) using an isolated test database.
+              Developed and debugged background jobs with Celery and RabbitMQ;
+              used Grafana to monitor and troubleshoot services.
             </li>
             <li>
-              Participated in Docker environment maintenance and project CI/CD pipeline setup.
+              Set up generation of a typed TypeScript client from OpenAPI to keep
+              backend and frontend contracts in sync.
             </li>
             <li>
-              Fixed bugs, performed refactoring, and participated in regular code reviews.
+              Wrote unit and integration tests with pytest using an isolated
+              test database; maintained the Docker environment and CI/CD, and
+              participated in code reviews.
             </li>
           </ul>
           <div class="tech-badges">
             <span class="tech-badge">Python</span>
             <span class="tech-badge">FastAPI</span>
             <span class="tech-badge">PostgreSQL</span>
+            <span class="tech-badge">Redis</span>
+            <span class="tech-badge">RabbitMQ</span>
+            <span class="tech-badge">Celery</span>
             <span class="tech-badge">SQLAlchemy</span>
             <span class="tech-badge">pytest</span>
             <span class="tech-badge">Docker</span>
             <span class="tech-badge">CI/CD</span>
+            <span class="tech-badge">Grafana</span>
           </div>
         </div>
       </section>
@@ -593,49 +630,76 @@
           >
           <h3 class="timeline-title">Kantano - Kanban Task Manager</h3>
           <span class="timeline-company"
-            >Full-stack project built from scratch</span
+            >Production task management service for teams</span
           >
           <p>
-            Designed the backend architecture from scratch: 38 FastAPI endpoints, async SQLAlchemy, and Alembic migrations. Wrote 144 unit and integration tests - covering all core business logic.
+            Independently designed, developed, and launched a collaborative
+            Kanban application; the project is running in production.
           </p>
           <ul>
             <li>
-              Implemented JWT authentication (access and refresh tokens in
-              cookies) and OAuth login via Yandex ID.
+              Implemented email-verified registration, JWT and OAuth
+              authentication, roles and invitations, real-time board updates
+              over WebSocket, and presence indicators.
             </li>
             <li>
-              Built a role-based permission system (OWNER / MANAGER / MEMBER)
-              with QR-code invitations.
+              Set up background email delivery with RabbitMQ and Celery and user
+              file storage in S3.
             </li>
             <li>
-              Implemented real-time communication using WebSocket and Redis
-              Pub/Sub as a message bus.
+              Added Redis caching: repeated board loads require 4 SQL queries
+              instead of 10.
             </li>
             <li>
-              Configured Ruff, basedpyright, and pre-commit for code quality
-              checks.
+              Covered key backend workflows with 240 pytest tests; configured
+              linting, type checking, and TypeScript client generation from
+              OpenAPI.
             </li>
             <li>
-              Built a CI/CD pipeline with GitHub Actions and deployed the
-              application using Docker Compose and Caddy with automatic HTTPS
-              via Let's Encrypt.
-            </li>
-            <li>
-              Developed the frontend with Vue 3, Pinia, and Vite with a
-              TypeScript client generated from the OpenAPI schema.
+              Maintain the project in production and set up CI/CD, Grafana Stack
+              metrics, logs and traces, Sentry error tracking, and automated
+              database backups to S3.
             </li>
           </ul>
           <div class="tech-badges">
             <span class="tech-badge">FastAPI</span>
             <span class="tech-badge">PostgreSQL</span>
             <span class="tech-badge">Redis</span>
+            <span class="tech-badge">RabbitMQ</span>
+            <span class="tech-badge">Celery</span>
             <span class="tech-badge">WebSocket</span>
             <span class="tech-badge">Docker</span>
             <span class="tech-badge">Vue 3</span>
-            <span class="tech-badge">GitHub Actions</span>
+            <span class="tech-badge">TypeScript</span>
+            <span class="tech-badge">S3</span>
+            <span class="tech-badge">Grafana Stack</span>
           </div>
           <a href="https://kantano.ru" target="_blank" class="btn"
             >Visit Production</a
+          >
+        </div>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+        <div class="timeline-item">
+          <span class="timeline-date">2026</span>
+          <h3 class="timeline-title">
+            Academy of Urban Environment Management, Urban Planning and Printing
+          </h3>
+          <span class="timeline-company"
+            >Diploma in Information Systems and Programming (09.02.07)</span
+          >
+          <p>Secondary vocational education</p>
+        </div>
+      </section>
+
+      <section id="languages">
+        <h2>Languages</h2>
+        <div class="tech-badges">
+          <span class="tech-badge">Russian - Native</span>
+          <span class="tech-badge"
+            >English - B2 (technical communication and documentation)</span
           >
         </div>
       </section>
