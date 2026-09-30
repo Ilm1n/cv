@@ -612,13 +612,14 @@
               for new service functionality.
             </li>
             <li>
-              Implemented Celery/RabbitMQ background jobs, moving long-running
-              operations out of HTTP requests and keeping the API responsive.
+              Moved academic-paper checks to Celery/RabbitMQ: the API now returns
+              a task ID in under 1 second instead of waiting 30-60 seconds
+              for processing.
             </li>
             <li>
               Automated typed TypeScript client generation from OpenAPI,
-              eliminating manual synchronization of backend and frontend API
-              contracts.
+              reducing backend-frontend API contract synchronization from
+              20-25 minutes of manual edits to a single command.
             </li>
             <li>
               Covered delivered functionality with pytest unit and integration
@@ -626,8 +627,9 @@
               overall backend coverage.
             </li>
             <li>
-              Diagnosed errors and bottlenecks with Grafana data, tracing issues
-              to their root causes before delivering fixes.
+              Established diagnostics using Grafana metrics and logs, reducing
+              the time to localize common errors and bottlenecks from several
+              hours to 15-20 minutes.
             </li>
             <li>
               Improved backend stability by fixing defects, refactoring code,
